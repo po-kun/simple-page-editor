@@ -8979,12 +8979,49 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
       message: '新年のご挨拶',
       description: '2022年度 インタビュー動画一覧',
-      selectedLayout: '3'
+      selectedLayout: '3',
+      movie1: '新年のご挨拶',
+      movie2: '新年のご挨拶2',
+      movie3: '新年のご挨拶3',
+      movie4: '新年のご挨拶4'
     };
   },
   computed: {
@@ -9015,105 +9052,235 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container", attrs: { id: "box" } }, [
     _c("div", { staticClass: "row min-vh-100" }, [
-      _c("div", { staticClass: "col-3 border min-h-screen" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { staticClass: "mt-5 mb-2" }, [_vm._v("ページタイトル")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.message,
-                expression: "message",
-              },
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", name: "left" },
-            domProps: { value: _vm.message },
-            on: {
-              focusIn: _vm.highlight,
-              focusOut: _vm.highlightOut,
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.message = $event.target.value
-              },
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { staticClass: "mt-5 mb-2" }, [_vm._v("ページの説明")]),
-          _vm._v(" "),
-          _c("textarea", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.description,
-                expression: "description",
-              },
-            ],
-            staticClass: "form-control",
-            attrs: { type: "textarea", name: "left" },
-            domProps: { value: _vm.description },
-            on: {
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.description = $event.target.value
-              },
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { staticClass: "mt-5 mb-2" }, [_vm._v("動画並びを選択")]),
-          _vm._v(" "),
-          _c(
-            "select",
-            {
+      _c(
+        "div",
+        { staticClass: "col-3 border min-h-screen vh-100 pb-5 overflow-auto" },
+        [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticClass: "mt-5 mb-2" }, [
+              _vm._v("ページタイトル"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
               directives: [
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.selectedLayout,
-                  expression: "selectedLayout",
+                  value: _vm.message,
+                  expression: "message",
                 },
               ],
-              staticClass: "form-select",
-              attrs: { name: "opts", "aria-label": "Default select example" },
+              staticClass: "form-control",
+              attrs: { type: "text", name: "left" },
+              domProps: { value: _vm.message },
               on: {
-                change: function ($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function (o) {
-                      return o.selected
-                    })
-                    .map(function (o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.selectedLayout = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
+                focusIn: _vm.highlight,
+                focusOut: _vm.highlightOut,
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.message = $event.target.value
                 },
               },
-            },
-            [
-              _c("option", { attrs: { value: "3" } }, [_vm._v("4つ並び")]),
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticClass: "mt-5 mb-2" }, [_vm._v("ページの説明")]),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.description,
+                  expression: "description",
+                },
+              ],
+              staticClass: "form-control",
+              attrs: { type: "textarea", name: "left" },
+              domProps: { value: _vm.description },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.description = $event.target.value
+                },
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticClass: "mt-5 mb-2" }, [
+              _vm._v("動画並びを選択"),
+            ]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.selectedLayout,
+                    expression: "selectedLayout",
+                  },
+                ],
+                staticClass: "form-select",
+                attrs: { name: "opts", "aria-label": "Default select example" },
+                on: {
+                  change: function ($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function (o) {
+                        return o.selected
+                      })
+                      .map(function (o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.selectedLayout = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  },
+                },
+              },
+              [
+                _c("option", { attrs: { value: "3" } }, [_vm._v("4つ並び")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "4" } }, [_vm._v("3つ並び")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "6" } }, [_vm._v("2つ並び")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "12" } }, [_vm._v("1つ並び")]),
+              ]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row mt-5 p-4 px-1 border m-2" }, [
+            _c("div", { staticClass: "col" }, [
+              _c("h5", [_vm._v("コンテンツの選択・編集")]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "4" } }, [_vm._v("3つ並び")]),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { staticClass: "mb-2" }, [
+                  _vm._v("〇〇のタイトル"),
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.movie1,
+                      expression: "movie1",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", name: "left" },
+                  domProps: { value: _vm.movie1 },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.movie1 = $event.target.value
+                    },
+                  },
+                }),
+              ]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "6" } }, [_vm._v("2つ並び")]),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { staticClass: "mt-5 mb-2" }, [
+                  _vm._v("〇〇のタイトル"),
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.movie2,
+                      expression: "movie2",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", name: "left" },
+                  domProps: { value: _vm.movie2 },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.movie2 = $event.target.value
+                    },
+                  },
+                }),
+              ]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "12" } }, [_vm._v("1つ並び")]),
-            ]
-          ),
-        ]),
-      ]),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { staticClass: "mt-5 mb-2" }, [
+                  _vm._v("〇〇のタイトル"),
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.movie3,
+                      expression: "movie3",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", name: "left" },
+                  domProps: { value: _vm.movie3 },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.movie3 = $event.target.value
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { staticClass: "mt-5 mb-2" }, [
+                  _vm._v("〇〇のタイトル"),
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.movie4,
+                      expression: "movie4",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", name: "left" },
+                  domProps: { value: _vm.movie4 },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.movie4 = $event.target.value
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _vm._m(0),
+            ]),
+          ]),
+          _vm._v(" "),
+          _vm._m(1),
+        ]
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "col pt-5 px-5" }, [
         _c("h1", [_vm._v(_vm._s(_vm.message))]),
@@ -9121,8 +9288,10 @@ exports.default = _default;
         _c("p", { domProps: { innerHTML: _vm._s(_vm.brValue) } }),
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
-          _c("div", { class: _vm.classOfImages }, [
-            _c("span", [_vm._v("title")]),
+          _c("div", { staticClass: "mb-3", class: _vm.classOfImages }, [
+            _c("span", { staticClass: "fw-bold" }, [
+              _vm._v(_vm._s(_vm.movie1)),
+            ]),
             _vm._v(" "),
             _c("img", {
               staticClass: "img-fluid",
@@ -9133,8 +9302,10 @@ exports.default = _default;
             }),
           ]),
           _vm._v(" "),
-          _c("div", { class: _vm.classOfImages }, [
-            _c("span", [_vm._v("title")]),
+          _c("div", { staticClass: "mb-3", class: _vm.classOfImages }, [
+            _c("span", { staticClass: "fw-bold" }, [
+              _vm._v(_vm._s(_vm.movie2)),
+            ]),
             _vm._v(" "),
             _c("img", {
               staticClass: "img-fluid",
@@ -9145,8 +9316,10 @@ exports.default = _default;
             }),
           ]),
           _vm._v(" "),
-          _c("div", { class: _vm.classOfImages }, [
-            _c("span", [_vm._v("title")]),
+          _c("div", { staticClass: "mb-3", class: _vm.classOfImages }, [
+            _c("span", { staticClass: "fw-bold" }, [
+              _vm._v(_vm._s(_vm.movie3)),
+            ]),
             _vm._v(" "),
             _c("img", {
               staticClass: "img-fluid",
@@ -9157,8 +9330,10 @@ exports.default = _default;
             }),
           ]),
           _vm._v(" "),
-          _c("div", { class: _vm.classOfImages }, [
-            _c("span", [_vm._v("title")]),
+          _c("div", { staticClass: "mb-3", class: _vm.classOfImages }, [
+            _c("span", { staticClass: "fw-bold" }, [
+              _vm._v(_vm._s(_vm.movie4)),
+            ]),
             _vm._v(" "),
             _c("img", {
               staticClass: "img-fluid",
@@ -9173,7 +9348,28 @@ exports.default = _default;
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("button", { staticClass: "mt-5 w-100 btn btn-outline-secondary" }, [
+        _vm._v("動画をえらぶ"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("button", { staticClass: "mt-5 w-100 btn btn-outlined btn-success" }, [
+        _vm._v("保存"),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
           return {
